@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Background Color Changer</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="description" content="Page description">
+
+  <link rel="icon" href="/favicon.ico">
+  
+</head>
+
+<body>
+  <button class="change-button" style="width: 200px; height: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 2px solid gray; border-radius: 10px;font-size: 1em;background: transparent;">Change BG Color</button>
+  <script>
+    'use strict'
+
+
+    const background = document.querySelector("body");
+    const changeButton = document.querySelector(".change-button");
+    
+    
+    changeButton.addEventListener('click', changeColor);
+
+    function changeColor() {
+      let randomValueH = (Math.random() * 360) + 1;
+      let randomValueS = (Math.random() * 100) + 1;
+      let randomValueL = (Math.random() * 100) + 1;
+
+      background.style.backgroundColor = `hsl(${randomValueH},${randomValueS}%,${randomValueL}%)`
+    }
+  </script>
+</body>
+</html>
